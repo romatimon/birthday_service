@@ -6,6 +6,8 @@ from .models import Employee, Subscription
 
 @shared_task
 def send_birthday_notifications():
+    """Отправляет уведомления о днях рождения сотрудников,
+    у которых день рождения завтра."""
     today = timezone.now().date()
     tomorrow = today + timezone.timedelta(days=1)
 
